@@ -4,7 +4,7 @@ $maxSize = $_GET['maxSize'];
 
 echo "<ul>";
 foreach ($items as $item) {
-    if ($maxSize => strlen($item)) {
+    if (strlen($item) <= $maxSize) {
         // Small items stay unchanged
         $text = htmlspecialchars($item);
     } else {
@@ -27,4 +27,3 @@ function parseInputList() {
     }
     return $result;
 }
-
