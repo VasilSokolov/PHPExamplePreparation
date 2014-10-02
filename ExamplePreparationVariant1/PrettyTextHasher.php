@@ -5,4 +5,12 @@ $hashValue = $_GET['hashValue'];
 $fontSize = $_GET['fontSize'];
 $fontStyle = $_GET['fontStyle'];
 
-$style = "font-size:$fontSize";
+$cssStyle = "font-size:$fontSize;";
+if ( $fontStyle == 'bold'){
+    $cssStyle .= 'font-weight:bold;';
+}
+if ( $fontStyle == 'normal' || $fontStyle == 'italic'){
+    $cssStyle .= "font-style:$fontStyle;";
+}
+
+echo "<p style=\"$cssStyle\"";
