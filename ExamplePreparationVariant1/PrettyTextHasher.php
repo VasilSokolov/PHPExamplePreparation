@@ -13,7 +13,7 @@ if ( $fontStyle == 'normal' || $fontStyle == 'italic'){
     $cssStyle .= "font-style:$fontStyle;";
 }
 
-$encryptedText = htmlspecialchars(encryptText($text, $hashValue));
+$encryptedText = encryptText($text, $hashValue);
 echo "<p style=\"$cssStyle\">$encryptedText</p>";
 
 function encryptText($text, $hashValue){
