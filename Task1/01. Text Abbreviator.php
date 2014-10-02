@@ -4,7 +4,7 @@ $maxSize = $_GET['maxSize'];
 
 echo "<ul>";
 foreach ($items as $item) {
-    if (strlen($item) <= $maxSize) {
+    if ($maxSize => strlen($item)) {
         // Small items stay unchanged
         $text = htmlspecialchars($item);
     } else {
