@@ -1,9 +1,11 @@
-<?php
+<form action="TakePostRequest.php" method="get">
+    Name: <input type="text" name="name"><br>
+    E-mail: <input type="text" name="email"><br>
+    <input type="submit">
+</form>
 
 
-$a = 5.5;
-$b = (double)0.0;
+Welcome <?php echo htmlspecialchars($_GET["name"]) ?><br>
+Your email is: <?php echo htmlspecialshars($_GET["email"]) ?>
 
-$result = $a / $b;
-var_dump($result);
-?>
+
