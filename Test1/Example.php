@@ -4,8 +4,9 @@
     <input type="submit">
 </form>
 
+<?php if(isset($_GET["name"])){ ?>
+Welcome <?php echo htmlentities($_GET["name"]) ?><br>
+Your email is: <?php echo htmlentities($_GET["email"]) ?>
 
-Welcome <?php echo htmlspecialchars($_GET["name"]) ?><br>
-Your email is: <?php echo htmlspecialshars($_GET["email"]) ?>
-
+<?php } ?>
 
