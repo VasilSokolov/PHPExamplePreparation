@@ -105,8 +105,8 @@
 //?>
 
 <form method="post">
-    Male <input type="radio" name="gender" value="male" />
-    Female <input type="radio" name="gender" value="female" />
+    Male <input type="radio" name="gender" value="male" /> <br/>
+    Female <input type="radio" name="gender" value="female" /> <br/>
     <input type="submit" value="submit"/>
 </form>
 <?php
@@ -115,5 +115,6 @@ if (isset($_POST['gender'])) {
     echo "Selected: $selected_radio";
 }
 ?>
+
 
 
