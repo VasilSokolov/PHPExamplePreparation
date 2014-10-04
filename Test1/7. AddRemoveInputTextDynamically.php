@@ -42,6 +42,9 @@ if (isset($_POST['nums'])) {
         $sum += $item;
     }
     echo "The sum is: $sum";
+    if($sum == 15){
+        header("Location: http://softuni.bg ");
+    }
 }
 ?>
 
