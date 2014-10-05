@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" htef="style.css"/>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-<table>
+<table border="1">
     <tr><th>Number</th><th>Square</th></tr>
     <?php
     $sum = 0;
