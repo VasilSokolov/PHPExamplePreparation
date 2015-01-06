@@ -2,7 +2,12 @@
 $text = $_GET['text'];
 $blacklist = $_GET['blacklist'];
 
-$emailPattern = '/[A-Za-z0-9\-\_\+]+@[A-Za-z0-9\-\]+\.[A-Za-z0-9\-\.]/';
+$emailPattern = '/\b[A-Za-z0-9\-\_\+]+@[A-Za-z0-9\-\]+\.[A-Za-z0-9\-\.]+\b/';
 
-$preg_match_all($emailPattern, $text,
-);
+$newText = preg_replace_callback($emailPattern, 'getReplacement', $text);
+
+echo $newText;
+function getReplacement($match){
+
+    return str_repeat("*", strlen($match));
+}

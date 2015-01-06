@@ -12,20 +12,22 @@ if ( $fontStyle == 'bold'){
 if ( $fontStyle == 'normal' || $fontStyle == 'italic'){
     $cssStyle .= "font-style:$fontStyle;";
 }
-
 $encryptedText = encryptText($text, $hashValue);
+
 echo "<p style=\"$cssStyle\">$encryptedText</p>";
 
 function encryptText($text, $hashValue){
-    $result = "";
-    for ($i=0; $i< strlen($text);$i++){
+    $result = '';
+    for ($i = 0; $i<strlen($text); $i++) {
         $ch = $text[$i];
-        if ($i%2==0){
+        if ($i % 2 == 0) {
             $newCh = chr(ord($ch) + $hashValue);
-        }else{
+        }else {
             $newCh = chr(ord($ch) - $hashValue);
         }
         $result .= $newCh;
     }
     return $result;
 }
+
+?>
