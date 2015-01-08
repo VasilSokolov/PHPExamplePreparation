@@ -7,6 +7,7 @@
             trim($_POST['username']));
         $password = htmlentities(
             trim($_POST['password']));
+        $password = hash('sha256', $password);
 
         $query = "SELECT id, username FROM 'users'
                     WHERE username = '$username'
@@ -27,4 +28,5 @@
     }else {
         header('Location: index.php');
     }
+
 ?>

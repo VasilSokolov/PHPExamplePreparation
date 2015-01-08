@@ -5,13 +5,15 @@
         $password = htmlentities(trim($_POST['password']));
         $email = htmlentities(trim($_POST['email']));
 
+        $password = hash('sha256', $password);
+
         $query = "SELECT id
                     FROM 'users'
                     WHERE username = '$username' LIMIT 1";
         $result = $mysqli->query($query);
 
         if ($result->num_rows !=0) {
-            echo "User alredy registered";
+            echo "User already registered";
         }else {
             $query = "INSERT INTO 'users'
                     (username, password, email)
@@ -20,7 +22,7 @@
                         '$password',
                         '$email')";
             if ($mysqli->query($query) === TRUE) {
-                header('Location: index.php');
+                header('Location: profile.php');
             }else {
                 echo $mysqli->error;
                 echo "Error";
