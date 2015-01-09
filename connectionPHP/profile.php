@@ -2,7 +2,17 @@
 <head>
     <title>Profile Page</title>
 </head>
+
+<script src="js/jQuery.1.9.1.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.js" type="text/javascript"></script>
+<link rel="stylesheet" href="js/jquery-ui.css">
 <body>
+
+    <?php
+        if (isset($_GET['submit'])) {
+            $query = 'UPDATE';
+        };
+    ?>
 
     <form>
         First name:
@@ -12,21 +22,14 @@
         Profile picture:
         <input type="file" name="profilePicture">
         Birth day:
-        <input type="datetime" name="birthDay">
+        <input type="datetime" id="datepicker" name="birthDay">
+        <input type="submit" name="submit" value="Edit profile">
     </form>
-<?php
-$server = 'localhost';
-$user = 'root';
-$password = '';
-$db_name = 'softuniworkchop';
-$mysqli = new mysqli(
-    $server, $user, $password, $db_name
-);
-if ($mysqli->connect_error) {
-    die('Connect Error('.
-        $mysqli->connect_errno.')'.
-        $mysqli->connect_error);
-}
-?>
+
+    <script type="text/javascript" >
+        $(function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
 </body>
 </html>
